@@ -99,6 +99,100 @@ for (i in 1:length(FM9196_2d$age)) {
   growth[i,4] <- FM9196_2d[i, c(FM9196_2d[i,30]+9)]
 }
 
+#plotting raw probability of maturation for each area and period at each age group 
+mas_early_age2 <-ggplot() +
+  geom_point(subset(growth_BT8084, age == 2), mapping = aes(y = m_as, x = length), col = alpha("#D9564C", 0.7)) +
+  geom_point(subset(growth_FM8084, age == 2), mapping = aes(y = m_as, x = length), col = alpha("#4C53AA", 0.7)) +
+  labs(title = "Age 2", tag = "a") +  
+  xlab("")+
+  xlim(80, 400)+
+  ylab("")+
+  ylim(-0.001, 1)+
+  theme_bw(base_size = 12)+
+  theme(plot.title = element_text(hjust = 0.5, size = 12), axis.text = element_text(size = 15), plot.margin = unit(c(1,1,0, 1), "cm"))
+mas_early_age3 <-
+  ggplot() +
+  geom_point(subset(growth_BT8084, age == 3), mapping = aes(y = m_as, x = length), col = alpha("#D9564C", 0.7)) +
+  geom_point(subset(growth_FM8084, age == 3), mapping = aes(y = m_as, x = length), col = alpha("#4C53AA", 0.7)) +
+  labs(title = "Age 3", tag = "b") +  
+  xlab("")+
+  xlim(80, 400)+
+  ylab("")+
+  ylim(-0.001, 1)+
+  theme_bw(base_size = 12)+
+  theme(plot.title = element_text(hjust = 0.5, size = 12), axis.text = element_text(size = 15), plot.margin = unit(c(0,1,1, 1), "cm"))
+mas_early_age4 <-
+  ggplot() +
+  geom_point(subset(growth_BT8084, age == 4), mapping = aes(y = m_as, x = length), col = alpha("#D9564C", 0.7)) +
+  geom_point(subset(growth_FM8084, age == 4), mapping = aes(y = m_as, x = length), col = alpha("#4C53AA", 0.7)) +
+  labs(title = "Age 4", tag = "c") +  
+  xlab("")+
+  xlim(80, 400)+
+  ylab("")+
+  ylim(-0.001, 1)+
+  theme_bw(base_size = 12)+
+  theme(plot.title = element_text(hjust = 0.5, size = 12), axis.text = element_text(size = 15), plot.margin = unit(c(1,1,0.3, 1), "cm"))
+mas_early_age5 <-
+  ggplot() +
+  geom_point(subset(growth_BT8084, age == 5), mapping = aes(y = m_as, x = length), col = alpha("#D9564C", 0.7)) +
+  geom_point(subset(growth_FM8084, age == 5), mapping = aes(y = m_as, x = length), col = alpha("#4C53AA", 0.7)) +
+  labs(title = "Age 5", tag = "d") +  
+  xlab("")+
+  xlim(80, 400)+
+  ylab("")+
+  ylim(-0.001, 1)+
+  theme_bw(base_size =12)+
+  theme(plot.title = element_text(hjust = 0.5, size = 12), axis.text = element_text(size = 15), plot.margin = unit(c(1,1,-0.3, 1), "cm"))
+mas_late_age2 <-
+  ggplot() +
+  geom_point(subset(growth_BT9196, age == 2), mapping = aes(y = m_as, x = length), col = alpha("#D9564C", 0.7)) +
+  geom_point(subset(growth_FM9196, age == 2), mapping = aes(y = m_as, x = length), col = alpha("#4C53AA", 0.7)) +
+  labs(title = "Age 2", tag = "e") +  
+  xlab("")+
+  xlim(80, 400)+
+  ylab("")+
+  ylim(-0.001, 1)+
+  theme_bw(base_size = 12)+
+  theme(plot.title = element_text(hjust = 0.5, size = 12), axis.text = element_text(size = 15))
+mas_late_age3 <-
+  ggplot() +
+  geom_point(subset(growth_BT9196, age == 3), mapping = aes(y = m_as, x = length), col = alpha("#D9564C", 0.7)) +
+  geom_point(subset(growth_FM9196, age == 3), mapping = aes(y = m_as, x = length), col = alpha("#4C53AA", 0.7)) +
+  labs(title = "Age 3", tag = "f") +  
+  xlab("")+
+  xlim(80, 400)+
+  ylab("")+
+  ylim(-0.001, 1)+
+  theme_bw(base_size = 12)+
+  theme(plot.title = element_text(hjust = 0.5, size = 12), axis.text = element_text(size = 15))
+mas_late_age4 <-
+  ggplot() +
+  geom_point(subset(growth_BT9196, age == 4), mapping = aes(y = m_as, x = length), col = alpha("#D9564C", 0.7)) +
+  geom_point(subset(growth_FM9196, age == 4), mapping = aes(y = m_as, x = length), col = alpha("#4C53AA", 0.7)) +
+  labs(title = "Age 4", tag = "g") +  
+  xlab("")+
+  xlim(80, 400)+
+  ylab("")+
+  ylim(-0.001, 1)+
+  theme_bw(base_size =12)+
+  theme(plot.title = element_text(hjust = 0.5, size = 12), axis.text = element_text(size = 15))
+mas_late_age5 <-
+  ggplot() +
+  geom_point(subset(growth_BT9196, age == 5), mapping = aes(y = m_as, x = length), col = alpha("#D9564C", 0.7)) +
+  geom_point(subset(growth_FM9196, age == 5), mapping = aes(y = m_as, x = length), col = alpha("#4C53AA", 0.7)) +
+  labs(title = "Age 5", tag = "h") +  
+  xlab("")+
+  xlim(80, 400)+
+  ylab("")+
+  ylim(-0.001, 1)+
+  theme_bw(base_size = 12)+
+  theme(plot.title = element_text(hjust = 0.5, size = 12), axis.text = element_text(size = 15))
+
+grid.arrange(arrangeGrob(mas_early_age2, mas_late_age2, mas_early_age3,mas_late_age3, mas_early_age4,mas_late_age4, mas_early_age5,mas_late_age5,
+                         ncol = 2,
+                         bottom = textGrob("Body size (mm)", gp = gpar(fontface = "bold", cex = 1.5)),
+                         left = textGrob("Probability of maturing m(a,s)", rot = 90, vjust = 1, gp = gpar(fontface = "bold", cex = 1.5))))
+
 
 #illustrating how different ogive models give similar FM8084 reaction norm
 ggplot(subset(growth_FM8084, age <6) , aes(x=length, y=m_as)) + geom_point(col = alpha("#4C53AA", 0.3)) +
@@ -224,7 +318,7 @@ colScale <- scale_colour_manual(name = "area",values = myColors)
 
 #plotting
 ggplot(Lp50_newdat_best1, aes(x = age, y = L50, group = area, col = area)) +
-  geom_point(aes(shape = period), size = 2.5, position = pd) +
+  geom_point(aes(shape = period), size = 3, position = pd) +
   geom_errorbar(aes(x = age, ymin=CI.low, ymax=CI.up ), width = 0.1, position = pd) +
   facet_grid(cols = vars(period)) +
   colScale +
@@ -327,7 +421,7 @@ new_dat_GSI_FM_late_3 = data.frame(age = rep(3, 221), length = seq(110,330,1), a
 new_dat_GSI_FM_late_4 = data.frame(age = rep(4, 221), length = seq(110,330,1), area = rep("FM",221), period = rep("late",221))
 new_dat_GSI_FM_late_5 = data.frame(age = rep(5, 221), length = seq(110,330,1), area = rep("FM",221), period = rep("late",221))
 
-#change "BT" and "early" from above to "FM" or "late" accordingly for different dataset
+#make predictions of GSI using the best model for each area for each period 
 BT_early_3 = predict(gbest, newdata = new_dat_GSI_BT_early_3, se.fit = T)
 BT_early_4 = predict(gbest, newdata = new_dat_GSI_BT_early_4, se.fit = T)
 BT_early_5 = predict(gbest, newdata = new_dat_GSI_BT_early_5, se.fit = T)
@@ -344,67 +438,7 @@ FM_late_3 = predict(gbest, newdata = new_dat_GSI_FM_late_3, se.fit = T)
 FM_late_4 = predict(gbest, newdata = new_dat_GSI_FM_late_4, se.fit = T)
 FM_late_5 = predict(gbest, newdata = new_dat_GSI_FM_late_5, se.fit = T)
 
-#age 3
-plot_e_3 <- ggplot() + 
-  geom_line(mapping = aes(y = df_early_3$BT_p, x = length), col = "red", linetype = 2) +
-  geom_line(subset(df_early_3, length %in% c(122:205)), mapping = aes(y = BT_p, x = length), col = "red", linetype = 1, size = 1.5) +
-  geom_line(mapping = aes(y = df_early_3$FM_p, x = length), col = "blue", linetype = 2) +
-  geom_ribbon(aes(x = length, ymin=BT_early_3$fit - 1.96* BT_early_3$se.fit, ymax=BT_early_3$fit + 1.96* BT_early_3$se.fit), alpha=0.1, fill = "red", 
-              color = "white", linetype = "dotted") +
-  geom_ribbon(aes(x = length, ymin=FM_early_3$fit - 1.96* FM_early_3$se.fit, ymax=FM_early_3$fit + 1.96* FM_early_3$se.fit), alpha=0.1, fill = "blue", 
-              color = "white", linetype = "dotted") +
-  geom_point(BT_early_3_real, mapping = aes(y = GSI, x = length), col = "red") +
-  geom_point(FM_early_3_real, mapping = aes(y = GSI, x = length), col = "blue") +
-  xlim(110,330) +
-  labs(title = "age 3")+
-  ylab("early")+
-  theme_bw(base_size = 10) +
-  theme(plot.title = element_text(hjust = 0.5))
-#age 4
-plot_e_4 <-  ggplot() + geom_line(mapping = aes(y = df_early_4$BT_p, x = length), col = "red", linetype = 2) +
-  geom_line(subset(df_early_4, length %in% c(150:275)), mapping = aes(y = BT_p, x = length), col = "red", linetype = 1, size = 1.5) +
-  geom_line(mapping = aes(y = df_early_4$FM_p, x = length), col = "blue", linetype = 2) +
-  geom_line(subset(df_early_4, length %in% c(162:219)), mapping = aes(y = FM_p, x = length), col = "blue", linetype = 1, size = 1.5) +
-  geom_ribbon(aes(x = length, ymin=BT_early_4$fit - 1.96* BT_early_4$se.fit, ymax=BT_early_4$fit + 1.96* BT_early_4$se.fit), alpha=0.1, fill = "red", 
-              color = "white", linetype = "dotted") +
-  geom_ribbon(aes(x = length, ymin=FM_early_4$fit - 1.96* FM_early_4$se.fit, ymax=FM_early_4$fit + 1.96* FM_early_4$se.fit), alpha=0.1, fill = "blue", 
-              color = "white", linetype = "dotted") +
-  geom_point(BT_early_4_real, mapping = aes(y = GSI, x = length), col = "red") +
-  geom_point(FM_early_4_real, mapping = aes(y = GSI, x = length), col = "blue") +
-  xlim(140,324) +
-  ylim(-1.6, 35.7) +
-  labs(title = "Age 4", tag = "a")+
-  theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5, size = 15), 
-        axis.text = element_text(size=13), axis.title= element_blank())
-
-#age 5 
-plot_e_5 <-  ggplot() + geom_line(mapping = aes(y = df_early_5$BT_p, x = length), col = "red", linetype = 2) +
-  geom_line(subset(df_early_5, length %in% c(185:282)), mapping = aes(y = BT_p, x = length), col = "red", linetype = 1, size = 1.5) +
-  geom_line(mapping = aes(y = df_early_5$FM_p, x = length), col = "blue", linetype = 2) +
-  geom_line(subset(df_early_5, length %in% c(189:221)), mapping = aes(y = FM_p, x = length), col = "blue", linetype = 1, size = 1.5)+
-  geom_ribbon(aes(x = length, ymin=BT_early_5$fit - 1.96* BT_early_5$se.fit, ymax=BT_early_5$fit + 1.96* BT_early_5$se.fit), alpha=0.1, fill = "red", 
-              color = "white", linetype = "dotted") +
-  geom_ribbon(aes(x = length, ymin=FM_early_5$fit - 1.96* FM_early_5$se.fit, ymax=FM_early_5$fit + 1.96* FM_early_5$se.fit), alpha=0.1, fill = "blue", 
-              color = "white", linetype = "dotted") +
-  geom_point(BT_early_5_real, mapping = aes(y = GSI, x = length), col = "red") +
-  geom_point(FM_early_5_real, mapping = aes(y = GSI, x = length), col = "blue") +
-  xlim(140,324) +
-  ylim(-1.6, 35.7) +
-  labs(title = "Age 5", tag = "b")+
-  theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5, size = 15), 
-        axis.text = element_text(size=13), axis.title = element_blank())
-
-BT_late_3 = predict(gbest, newdata = new_dat_GSI_BT_late_3, se.fit = T)
-BT_late_4 = predict(gbest, newdata = new_dat_GSI_BT_late_4, se.fit = T)
-BT_late_5 = predict(gbest, newdata = new_dat_GSI_BT_late_5, se.fit = T)
-
-
-FM_late_3 = predict(gbest, newdata = new_dat_GSI_FM_late_3, se.fit = T)
-FM_late_4 = predict(gbest, newdata = new_dat_GSI_FM_late_4, se.fit = T)
-FM_late_5 = predict(gbest, newdata = new_dat_GSI_FM_late_5, se.fit = T)
-
+#combining the predictions of each age from both areas 
 df_late_3 <- data.frame(BT_p = BT_late_3$fit, FM_p = FM_late_3$fit, length = length) 
 df_late_4 <- data.frame(BT_p = BT_late_4$fit, FM_p = FM_late_4$fit, length = length) 
 df_late_5 <- data.frame(BT_p = BT_late_5$fit, FM_p = FM_late_5$fit, length = length) 
@@ -413,11 +447,7 @@ df_early_3 <- data.frame(BT_p = BT_early_3$fit, FM_p = FM_early_3$fit, length = 
 df_early_4 <- data.frame(BT_p = BT_early_4$fit, FM_p = FM_early_4$fit, length = length) 
 df_early_5 <- data.frame(BT_p = BT_early_5$fit, FM_p = FM_early_5$fit, length = length)
 
-df_late_3 <- data.frame(BT_p = BT_late_3$fit, FM_p = FM_late_3$fit, length = length) 
-df_late_4 <- data.frame(BT_p = BT_late_4$fit, FM_p = FM_late_4$fit, length = length) 
-df_late_5 <- data.frame(BT_p = BT_late_5$fit, FM_p = FM_late_5$fit, length = length) 
-
-#adding actual datapoints
+#adding empirical data points of GSI
 BT_early_3_real <- subset(gonad_selectyear, area == "BT"& period == "early"&age == 3) #47 obs
 BT_early_4_real <- subset(gonad_selectyear, area == "BT"& period == "early"&age == 4) #52 obs
 BT_early_5_real <- subset(gonad_selectyear, area == "BT"& period == "early"&age == 5) #25 obs
@@ -433,6 +463,64 @@ BT_late_5_real <- subset(gonad_selectyear, area == "BT"& period == "late"&age ==
 FM_late_3_real <- subset(gonad_selectyear, area == "FM"& period == "late"&age == 3) #27 obs
 FM_late_4_real <- subset(gonad_selectyear, area == "FM"& period == "late"&age == 4) #66 obs
 FM_late_5_real <- subset(gonad_selectyear, area == "FM"& period == "late"&age == 5) #68 obs
+
+#plotting
+#period early
+#age 3
+#colour: red "#D9564C", blue "#4C53AA"
+plot_e_3 <- ggplot() + 
+  geom_line(mapping = aes(y = df_early_3$BT_p, x = length), col = "#D9564C", linetype = 2) +
+  geom_line(subset(df_early_3, length %in% c(122:205)), mapping = aes(y = BT_p, x = length), col = "#D9564C", linetype = 1, size = 1.5) +
+  geom_line(mapping = aes(y = df_early_3$FM_p, x = length), col =  "#4C53AA", linetype = 2) +
+  geom_ribbon(aes(x = length, ymin=BT_early_3$fit - 1.96* BT_early_3$se.fit, ymax=BT_early_3$fit + 1.96* BT_early_3$se.fit), alpha=0.1, fill = "#D9564C", 
+              color = "white", linetype = "dotted") +
+  geom_ribbon(aes(x = length, ymin=FM_early_3$fit - 1.96* FM_early_3$se.fit, ymax=FM_early_3$fit + 1.96* FM_early_3$se.fit), alpha=0.1, fill = "#4C53AA", 
+              color = "white", linetype = "dotted") +
+  geom_point(BT_early_3_real, mapping = aes(y = GSI, x = length), col = "#D9564C") +
+  geom_point(FM_early_3_real, mapping = aes(y = GSI, x = length), col =  "#4C53AA") +
+  xlim(110,330) +
+  labs(title = "Age 3")+
+  ylab("early")+
+  theme_bw(base_size = 10) +
+  theme(plot.title = element_text(hjust = 0.5))
+#age 4
+plot_e_4 <-  ggplot() + geom_line(mapping = aes(y = df_early_4$BT_p, x = length), col = "#D9564C", linetype = 2) +
+  geom_line(subset(df_early_4, length %in% c(150:275)), mapping = aes(y = BT_p, x = length), col = "#D9564C", linetype = 1, size = 1.5) +
+  geom_line(mapping = aes(y = df_early_4$FM_p, x = length), col =  "#4C53AA", linetype = 2) +
+  geom_line(subset(df_early_4, length %in% c(162:219)), mapping = aes(y = FM_p, x = length), col = "#4C53AA", linetype = 1, size = 1.5) +
+  geom_ribbon(aes(x = length, ymin=BT_early_4$fit - 1.96* BT_early_4$se.fit, ymax=BT_early_4$fit + 1.96* BT_early_4$se.fit), alpha=0.1, fill ="#D9564C", 
+              color = "white", linetype = "dotted") +
+  geom_ribbon(aes(x = length, ymin=FM_early_4$fit - 1.96* FM_early_4$se.fit, ymax=FM_early_4$fit + 1.96* FM_early_4$se.fit), alpha=0.1, fill =  "#4C53AA", 
+              color = "white", linetype = "dotted") +
+  geom_point(BT_early_4_real, mapping = aes(y = GSI, x = length), col = "#D9564C") +
+  geom_point(FM_early_4_real, mapping = aes(y = GSI, x = length), col =  "#4C53AA") +
+  xlim(140,324) +
+  ylim(-1.6, 35.7) +
+  labs(title = "Age 4", tag = "a")+
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5, size = 13), 
+        axis.text = element_text(size=13), axis.title= element_blank())
+
+#age 5 
+plot_e_5 <-  ggplot() + geom_line(mapping = aes(y = df_early_5$BT_p, x = length), col = "#D9564C", linetype = 2) +
+  geom_line(subset(df_early_5, length %in% c(185:282)), mapping = aes(y = BT_p, x = length), col ="#D9564C", linetype = 1, size = 1.5) +
+  geom_line(mapping = aes(y = df_early_5$FM_p, x = length), col =  "#4C53AA", linetype = 2) +
+  geom_line(subset(df_early_5, length %in% c(189:221)), mapping = aes(y = FM_p, x = length), col = "#4C53AA", linetype = 1, size = 1.5)+
+  geom_ribbon(aes(x = length, ymin=BT_early_5$fit - 1.96* BT_early_5$se.fit, ymax=BT_early_5$fit + 1.96* BT_early_5$se.fit), alpha=0.1, fill ="#D9564C", 
+              color = "white", linetype = "dotted") +
+  geom_ribbon(aes(x = length, ymin=FM_early_5$fit - 1.96* FM_early_5$se.fit, ymax=FM_early_5$fit + 1.96* FM_early_5$se.fit), alpha=0.1, fill =  "#4C53AA", 
+              color = "white", linetype = "dotted") +
+  geom_point(BT_early_5_real, mapping = aes(y = GSI, x = length), col = "#D9564C") +
+  geom_point(FM_early_5_real, mapping = aes(y = GSI, x = length), col =  "#4C53AA") +
+  xlim(140,324) +
+  ylim(-1.6, 35.7) +
+  labs(title = "Age 5", tag = "b")+
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5, size = 13), 
+        axis.text = element_text(size=13), axis.title = element_blank())
+
+#period late
+#age 3
 plot_l_3 <-   ggplot() + 
   geom_line(mapping = aes(y = df_late_3$BT_p, x = length), col = "red", linetype = 2) +
   geom_line(subset(df_late_3, length %in% c(178:313)), mapping = aes(y = BT_p, x = length), col = "red", linetype = 1, size = 1.5) +
@@ -451,46 +539,45 @@ plot_l_3 <-   ggplot() +
   theme(plot.title = element_text(hjust = 0.5))
 
 #age 4
-plot_l_4 <-   ggplot() + geom_line(mapping = aes(y = df_late_4$BT_p, x = length), col = "red", linetype = 2) +
-  geom_line(subset(df_late_4, length %in% c(169:315)), mapping = aes(y = BT_p, x = length), col = "red", linetype = 1, size = 1.5) +
-  geom_line(mapping = aes(y = df_late_4$FM_p, x = length), col = "blue", linetype = 2) +
-  geom_line(subset(df_late_4, length %in% c(154:245)), mapping = aes(y = FM_p, x = length), col = "blue", linetype = 1, size = 1.5) +
-  geom_ribbon(aes(x = length, ymin=BT_late_4$fit - 1.96* BT_late_4$se.fit, ymax=BT_late_4$fit + 1.96* BT_late_4$se.fit), alpha=0.1, fill = "red", 
+plot_l_4 <-   ggplot() + geom_line(mapping = aes(y = df_late_4$BT_p, x = length), col ="#D9564C", linetype = 2) +
+  geom_line(subset(df_late_4, length %in% c(169:315)), mapping = aes(y = BT_p, x = length), col = "#D9564C", linetype = 1, size = 1.5) +
+  geom_line(mapping = aes(y = df_late_4$FM_p, x = length), col =  "#4C53AA", linetype = 2) +
+  geom_line(subset(df_late_4, length %in% c(154:245)), mapping = aes(y = FM_p, x = length), col =  "#4C53AA", linetype = 1, size = 1.5) +
+  geom_ribbon(aes(x = length, ymin=BT_late_4$fit - 1.96* BT_late_4$se.fit, ymax=BT_late_4$fit + 1.96* BT_late_4$se.fit), alpha=0.1, fill = "#D9564C", 
               color = "white", linetype = "dotted") +
-  geom_ribbon(aes(x = length, ymin=FM_late_4$fit - 1.96* FM_late_4$se.fit, ymax=FM_late_4$fit + 1.96* FM_late_4$se.fit), alpha=0.1, fill = "blue", 
+  geom_ribbon(aes(x = length, ymin=FM_late_4$fit - 1.96* FM_late_4$se.fit, ymax=FM_late_4$fit + 1.96* FM_late_4$se.fit), alpha=0.1, fill =  "#4C53AA", 
               color = "white", linetype = "dotted") +
-  geom_point(BT_late_4_real, mapping = aes(y = GSI, x = length), col = "red") +
-  geom_point(FM_late_4_real, mapping = aes(y = GSI, x = length), col = "blue") +
+  geom_point(BT_late_4_real, mapping = aes(y = GSI, x = length), col = "#D9564C") +
+  geom_point(FM_late_4_real, mapping = aes(y = GSI, x = length), col =  "#4C53AA") +
   xlim(140,324) +
-  xlab("Body size (mm)")+
   ylim(-1.6, 35.7) +
   labs(title = "Age 4", tag = "c")+
   theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5, size = 15), 
-        axis.text = element_text(size=13), axis.title.y = element_blank(),axis.title.x = element_text(size = 15))
+  theme(plot.title = element_text(hjust = 0.5, size = 13), 
+        axis.text = element_text(size=13), axis.title = element_blank())
 
 #age 5 
 plot_l_5 <-   
-  ggplot() + geom_line(mapping = aes(y = df_late_5$BT_p, x = length), col = "red", linetype = 2) +
-  geom_line(subset(df_late_5, length %in% c(174:323)), mapping = aes(y = BT_p, x = length), col = "red", linetype = 1, size = 1.5) +
-  geom_line(mapping = aes(y = df_late_5$FM_p, x = length), col = "blue", linetype = 2) +
-  geom_line(subset(df_late_5, length %in% c(168:263)), mapping = aes(y = FM_p, x = length), col = "blue", linetype = 1, size = 1.5)+
-  geom_ribbon(aes(x = length, ymin=BT_late_5$fit - 1.96* BT_late_5$se.fit, ymax=BT_late_5$fit + 1.96* BT_late_5$se.fit), alpha=0.1, fill = "red", 
+  ggplot() + geom_line(mapping = aes(y = df_late_5$BT_p, x = length), col = "#D9564C", linetype = 2) +
+  geom_line(subset(df_late_5, length %in% c(174:323)), mapping = aes(y = BT_p, x = length), col = "#D9564C", linetype = 1, size = 1.5) +
+  geom_line(mapping = aes(y = df_late_5$FM_p, x = length), col = "#4C53AA", linetype = 2) +
+  geom_line(subset(df_late_5, length %in% c(168:263)), mapping = aes(y = FM_p, x = length), col =  "#4C53AA", linetype = 1, size = 1.5)+
+  geom_ribbon(aes(x = length, ymin=BT_late_5$fit - 1.96* BT_late_5$se.fit, ymax=BT_late_5$fit + 1.96* BT_late_5$se.fit), alpha=0.1, fill = "#D9564C", 
               color = "white", linetype = "dotted") +
-  geom_ribbon(aes(x = length, ymin=FM_late_5$fit - 1.96* FM_late_5$se.fit, ymax=FM_late_5$fit + 1.96* FM_late_5$se.fit), alpha=0.1, fill = "blue", 
+  geom_ribbon(aes(x = length, ymin=FM_late_5$fit - 1.96* FM_late_5$se.fit, ymax=FM_late_5$fit + 1.96* FM_late_5$se.fit), alpha=0.1, fill = "#4C53AA", 
               color = "white", linetype = "dotted") +
-  geom_point(BT_late_5_real, mapping = aes(y = GSI, x = length), col = "red") +
-  geom_point(FM_late_5_real, mapping = aes(y = GSI, x = length), col = "blue") +
+  geom_point(BT_late_5_real, mapping = aes(y = GSI, x = length), col = "#D9564C") +
+  geom_point(FM_late_5_real, mapping = aes(y = GSI, x = length), col =  "#4C53AA") +
   xlim(140,324) +
-  xlab("Body size (mm)")+
   ylim(-1.6, 35.7) +
   labs(title = "Age 5", tag = "d")+
   theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5, size = 15), 
-        axis.text = element_text(size=13), axis.title.y = element_blank(),axis.title.x = element_text(size = 15))
+  theme(plot.title = element_text(hjust = 0.5, size = 13), 
+        axis.text = element_text(size=13), axis.title = element_blank())
 
-yleft <- textGrob("Gonado-somatic index (%)", rot = 90, gp = gpar(fontsize = 14))
-grid.arrange(plot_e_4, plot_e_5, plot_l_4, plot_l_5, ncol = 2, left = yleft )
+grid.arrange(plot_e_4, plot_l_4, plot_e_5, plot_l_5, ncol = 2,  bottom = textGrob("Body size (mm)", gp = gpar(fontface = "bold", cex = 1.5)),
+             left = textGrob("Gonado-somatic index (%)", rot = 90, vjust = 1, gp = gpar(fontface = "bold", cex = 1.5)))
+
 
 #Student T test
 library(rstatix)
